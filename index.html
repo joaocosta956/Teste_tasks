@@ -21,7 +21,32 @@
             <li><input type="checkbox" id="task5" name="Task" value="task5">Task 5</li>
             <li><input type="checkbox" id="task6" name="Task" value="task6">Task 6</li>
         </ul><!--Tasks-->
+        <div class="barra-progresso"></div>
     </div><!--box-main-->
 
+    <script>
+
+        var boxTasks = document.querySelector('.Tasks');
+        boxTasks.innerHTML = "";
+
+
+        const tasks = ['Treinar','Ler','Escrever','Programar'
+        ];
+
+        const quantidadeTasks = tasks.length
+
+        if(quantidadeTasks == 0){
+            boxTasks.innerHTML+=`
+            <h3>Nenhuma task diponivel</h3>
+            `
+        }
+        else{
+            tasks.forEach((taskAtual) => {
+                boxTasks.innerHTML+= `
+                <li><input type="checkbox" id="task`+tasks.indexOf(taskAtual)+`" name="Task" value="task`+tasks.indexOf(taskAtual)+`">`+taskAtual+` </li>
+                `
+            });
+        }
+    </script>
 </body>
 </html>
